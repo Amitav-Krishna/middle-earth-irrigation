@@ -1,0 +1,87 @@
+        header, footer, section, article, aside, nav { display: block; } /* Basic HTML5 element reset */
+        .container { max-width: 1200px; margin: 0 auto; padding: 20px; }
+        .introduction-section { display: flex; align-items: flex-start; gap: 20px; margin-bottom: 30px; padding: 20px; border: 1px solid #ccc;}
+        .introduction-section img { max-width: 300px; /* Adjust as needed */ height: auto; border: 1px solid #eee; }
+        .introduction-content { flex-grow: 1; }
+        .about-us-section { margin-bottom: 30px; padding: 20px; border: 1px solid #ccc; }
+	.faqs-section { margin-bottom: 30px; padding: 20px; border: 1px solid #ccc; }
+        .faqs-section h2 { margin-top: 0; }
+        details { border: 2px solid #ccc; padding: 10px; margin-bottom: 10px; border-radius: 4px; }
+        summary { font-weight: bold; cursor: pointer; }
+        h1, h2, h3 { margin-top: 0; }
+	body {
+	    font-family: sans-serif;
+	    display: flex;
+	    flex-direction: column;
+	    align-items: center;
+	    margin: 0;
+	    background-color: #f5f5Dd;
+	    padding: 20px;
+	}
+
+	.carousel-container {
+	    position: relative;
+	    width: 90%; /* Adjust as needed */
+	    max-width: 900px; /* Maximum width of the carousel */
+	    margin: 20px auto;
+	}
+
+	.carousel-viewport {
+	    width: 100%;
+	    overflow: hidden; /* This is crucial for showing only 3 images */
+	    border: 2px solid #ccc;
+	    border-radius: 8px;
+	}
+
+	.carousel-track {
+	    display: flex; /* Lays out images in a row */
+	    transition: transform 0.5s ease-in-out; /* Smooth sliding animation */
+	}
+
+	.carousel-item {
+	    min-width: calc(100% / 3); /* Each item takes up 1/3 of the viewport width */
+	    flex: 0 0 calc(100% / 3); /* Prevents shrinking/growing, ensures 1/3 width */
+	    box-sizing: border-box; /* Includes padding and border in the element's total width and height */
+	    padding: 10px; /* Optional spacing between images */
+	}
+
+	.carousel-item img {
+	    width: 100%;
+	    height: auto; /* Maintain aspect ratio */
+	    display: block; /* Removes extra space below image */
+	    border-radius: 4px;
+	    object-fit: cover; /* Ensures images fill the space, might crop */
+	    max-height: 200px; /* Optional: to keep images of a similar height */
+	}
+
+	.carousel-button {
+	    position: absolute;
+	    top: 50%;
+	    transform: translateY(-50%);
+	    background-color: rgba(0, 0, 0, 0.5);
+	    color: white;
+	    border: none;
+	    padding: 10px 15px;
+	    font-size: 20px;
+	    cursor: pointer;
+	    z-index: 10;
+	    border-radius: 50%;
+	}
+
+	.carousel-button.prev {
+	    left: -20px; /* Position outside the viewport or adjust as needed */
+	}
+
+	.carousel-button.next {
+	    right: -20px; /* Position outside the viewport or adjust as needed */
+	}
+
+	.carousel-button:hover {
+	    background-color: rgba(0, 0, 0, 0.8);
+	}
+
+	.carousel-button:disabled {
+	    background-color: rgba(0, 0, 0, 0.2);
+	    cursor: not-allowed;
+	}
+
